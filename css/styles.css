@@ -253,18 +253,6 @@ select {
     gap: var(--space-m);
 }
 
-@media (min-width: 35em) {
-    .flow > * + * {
-        margin-block-start: var(--flow-space, 1.5rem);
-    }
-}
-
-@media (min-width: 34.9999em) and (max-width: 44.9999em) {
-    .wrapper {
-        padding-inline: 2.4375rem;
-    }
-}
-
 /* Primary navigation */
 .primary-header {
     padding-inline-start: 3.4375rem;
@@ -295,9 +283,10 @@ select {
 
 @supports (backdrop-filter: blur(1rem)) {
     .header-menu {
-        background-color: hsl(var(--clr-black) / 0.2);
+        background-color: hsl(var(--clr-secondary) / 0.2);
         backdrop-filter: blur(0.675rem);
     }
+  
 }
 
 .header-menu a {
@@ -399,6 +388,10 @@ select {
     .header-menu[data-visible="true"] {
         transform: translate(0);
     }
+
+  .header-menu a{
+    color: hsl(var(--clr-primary));
+  }
 
     .hamburger {
         position: relative;
