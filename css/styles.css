@@ -296,7 +296,7 @@ select {
     transition: color 350ms ease-in-out;
 }
 
-@media (min-width: 45em) {
+@media (width > 45em) {
     .primary-header {
         --gap: 3rem;
         padding-inline: 0;
@@ -312,21 +312,16 @@ select {
         gap: 3rem;
         padding: 0 7.6875rem 0 10.3125rem;
     }
-
-    .header-menu a {
-        font-size: 1rem;
-        letter-spacing: 2.7px;
-    }
 }
 
-@media (min-width: 34.9999em) and (max-width: 44.9999em) {
+@media (35em < width < 45em) {
     .header-menu {
         position: relative;
         translate: 2.4375rem 0;
     }
 }
 
-@media (min-width: 35em) {
+@media (width > 35em) {
     .header-menu {
         background-color: hsl(var(--clr-accent) / 0.04);
         padding-inline: 3rem 2.875rem;
@@ -358,7 +353,7 @@ select {
     gap: 1rem;
 }
 
-@media (max-width: 35em) {
+@media (width < 35em) {
     .primary-header {
         padding-inline-start: 0;
     }
