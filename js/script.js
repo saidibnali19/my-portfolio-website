@@ -10,3 +10,12 @@ menuToggler.addEventListener("click", () => {
         menuToggler.setAttribute("aria-expanded", false);
     }
 });
+
+// To close the menu by clicking outside of it
+document.addEventListener("click", e => {
+    if (!menu.contains(e.target) && !menuToggler.contains(e.target)) {
+        console.log("You clicked outside the menu")
+        menu.setAttribute("data-visible", false);
+        menuToggler.setAttribute("aria-expanded", false);
+    } else return
+})
