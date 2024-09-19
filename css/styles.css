@@ -67,11 +67,29 @@ select {
     }
 }
 
+/* Personal preference */
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
 /* Custom properties */
 :root {
     --clr-primary: 0 0% 90%;
     --clr-secondary: 0 0% 10%;
-    --clr-accent: 155 100% 37%;
+    --clr-accent: 112 46% 60%;
     --clr-light: 0 0% 75%;
 
     /* @link https://utopia.fyi/type/calculator?c=320,14,1.333,1240,16,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -118,10 +136,11 @@ select {
     --fs-300: var(--step--1);
     --fs-200: var(--step--2);
 
-    --ff-heading: serif;
-    --ff-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
+    --ff-heading: "Space Mono", monospace;
+    --ff-body: "Roboto", sans-serif;
+
+    --fw-bold: bold;
+    --fw-normal: normal;
 
     --primary-header-min-height: 6rem;
 }
@@ -171,6 +190,10 @@ select {
     font-size: var(--fs-500);
 }
 
+.fs-900,.fs-800,.fs-700,.fs-600{
+    line-height: 1.1;
+}
+
 .fs-400 {
     font-size: var(--fs-400);
     line-height: 1.6667;
@@ -188,8 +211,19 @@ select {
     font-family: var(--ff-body);
 }
 
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+.fw-normal {
+    font-weight: var(--fw-normal);
+}
+
 .uppercase {
     text-transform: uppercase;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .btn-primary {
@@ -260,7 +294,7 @@ select {
     width: 100%;
     position: fixed;
     z-index: 2;
-    box-shadow: 0 6px 6px 0 hsl(var(--clr-secondary) / .75);
+    box-shadow: 0 6px 6px 0 hsl(var(--clr-secondary) / 0.75);
 }
 
 .primary-header > div {
@@ -370,7 +404,7 @@ select {
 
     .header-menu-toggler {
         position: absolute;
-        right: calc(var(--space-m) + .75rem);
+        right: calc(var(--space-m) + 0.75rem);
         width: 1.25rem;
         aspect-ratio: 1;
         z-index: 2;
@@ -448,25 +482,15 @@ select {
 
 .hero > div {
     min-height: calc(100svh - var(--primary-header-min-height));
-    grid-template-columns: 3fr 1fr;
     place-items: center;
 }
 
-.hero div div {
-    background-color: hsl(0 0% 0% / 0.4);
-    padding: var(--space-m);
-    border-radius: 0.25rem;
+.hero__text{
+    max-width: 45ch;
 }
 
 .hero__cta {
     display: inline-block;
-}
-
-.hero__image {
-    border-radius: 0.25rem;
-    overflow: hidden;
-    width: 100%;
-    object-fit: cover;
 }
 
 @media (width < 45em) {
@@ -478,13 +502,7 @@ select {
     .hero p {
         max-width: 45ch;
     }
-
-    .hero__image {
-        display: none;
-    }
 }
-/* outline: 5px solid red;
-outline-offset: -5px; */
 
 /* About section */
 .about {
@@ -702,7 +720,6 @@ outline-offset: -5px; */
 }
 
 .form__button {
-    cursor: pointer;
     border: none;
     width: 100%;
 }
